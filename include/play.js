@@ -113,8 +113,12 @@ module.exports = {
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.connection.dispatcher.end();
-          queue.textChannel.send(i18n.__mf("play.skipSong", { author: user })).catch(console.error);
+          var reaction_respond = await queue.textChannel.send(i18n.__mf("play.skipSong", { author: user })).catch(console.error);
+		  if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+			reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		  }
           collector.stop();
+		  
           break;
 
         case "⏯":
@@ -123,11 +127,17 @@ module.exports = {
           if (queue.playing) {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.pause(true);
-            queue.textChannel.send(i18n.__mf("play.pauseSong", { author: user })).catch(console.error);
+            var reaction_respond = await queue.textChannel.send(i18n.__mf("play.pauseSong", { author: user })).catch(console.error);		    
+			if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+				reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		    }
           } else {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.resume();
-            queue.textChannel.send(i18n.__mf("play.resumeSong", { author: user })).catch(console.error);
+            var reaction_respond = await queue.textChannel.send(i18n.__mf("play.resumeSong", { author: user })).catch(console.error);
+		    if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+				reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		    }
           }
           break;
 
@@ -137,10 +147,16 @@ module.exports = {
           queue.muted = !queue.muted;
           if (queue.muted) {
             queue.connection.dispatcher.setVolumeLogarithmic(0);
-            queue.textChannel.send(i18n.__mf("play.mutedSong", { author: user })).catch(console.error);
+            var reaction_respond = await queue.textChannel.send(i18n.__mf("play.mutedSong", { author: user })).catch(console.error);
+			if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+				reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		    }
           } else {
             queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
-            queue.textChannel.send(i18n.__mf("play.unmutedSong", { author: user })).catch(console.error);
+            var reaction_respond = await queue.textChannel.send(i18n.__mf("play.unmutedSong", { author: user })).catch(console.error);		   
+			if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+				reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		    }
           }
           break;
 
@@ -150,9 +166,12 @@ module.exports = {
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.volume = Math.max(queue.volume - 10, 0);
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
-          queue.textChannel
+          var reaction_respond = await queue.textChannel
             .send(i18n.__mf("play.decreasedVolume", { author: user, volume: queue.volume }))
             .catch(console.error);
+		  if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+			reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		  }
           break;
 
         case "🔊":
@@ -161,30 +180,39 @@ module.exports = {
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.volume = Math.min(queue.volume + 10, 100);
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
-          queue.textChannel
+          var reaction_respond = await queue.textChannel
             .send(i18n.__mf("play.increasedVolume", { author: user, volume: queue.volume }))
             .catch(console.error);
+			if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+				reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		    }
           break;
 
         case "🔁":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
-          queue.textChannel
+          var reaction_respond = await queue.textChannel
             .send(
               i18n.__mf("play.loopSong", {
                 author: user,
                 loop: queue.loop ? i18n.__("common.on") : i18n.__("common.off")
               })
             )
-            .catch(console.error);
+            .catch(console.error);		    
+			if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+				reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		    }
           break;
 
         case "⏹":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.songs = [];
-          queue.textChannel.send(i18n.__mf("play.stopSong", { author: user })).catch(console.error);
+          var reaction_respond = await queue.textChannel.send(i18n.__mf("play.stopSong", { author: user })).catch(console.error);		    
+		  if (PRUNING && reaction_respond && !reaction_respond.deleted) {
+				reaction_respond.delete({ timeout: 3000 }).catch(console.error);
+		  }
           try {
             queue.connection.dispatcher.end();
           } catch (error) {
