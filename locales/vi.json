@@ -153,7 +153,7 @@
   "common": {
     "on": "**bật**",
     "off": "**tắt**",
-    "enabled": "**kích hoạt*",
+    "enabled": "**kích hoạt**",
     "disabled": "**vô hiệu hóa**",
     "errorNotChannel": "Bạn cần tham gia một kênh thoại trước!",
     "cooldownMessage": "xin vui lòng chờ {time} giây trước khi sử dụng lại lệnh `{name}`.",
