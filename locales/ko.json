@@ -71,7 +71,8 @@
     "loopSong": "<@{author}> 음악 반복 상태: {loop}",
     "stopSong": "<@{author}> ⏹ 음악을 중지했습니다.",
     "leaveChannel": "채널을 떠나는 중입니다.",
-    "songNotFound": "오디오를 찾을 수 없음"
+    "songNotFound": "오디오를 찾을 수 없음",
+    "songAccessErr": "동영상에 연령 제한이 있거나 비공개이거나 사용할 수 없습니다."
   },
   "playlist": {
     "description": "Youtube 부터 재생목록을 재생합니다.",
@@ -116,7 +117,7 @@
     "usageReply": "사용방법`: {prefix}{name} <Video Name>",
     "errorAlreadyCollector": "해당 채널에 메세지 컬렉터가 이미 존재합니다.",
     "errorNotChannel": "음성 채널에 들어와 있지 않습니다.",
-    "resultEmbedTtile": "**재생할 음악 번호를 답장으로 보내주세요.**",
+    "resultEmbedTitle": "**재생할 음악 번호를 답장으로 보내주세요.**",
     "resultEmbedDesc": "검색 결과: {search}"
   },
   "shuffle": {

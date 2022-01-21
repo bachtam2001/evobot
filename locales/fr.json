@@ -1,7 +1,7 @@
 {
   "clip": {
     "description": "Écoute le son d'un clip",
-    "usagesReply": "Utilisation: /clip <nom>",
+    "usagesReply": "Utilisation: {prefix}clip <nom>",
     "errorQueue": "Impossible d'écouter le clip car une file d'attente est active.",
     "errorNotChannel": "Vous devez d'abord rejoindre un canal vocal!"
   },
@@ -65,7 +65,8 @@
     "loopSong": "<@{author}> Loop est maintenant {loop}",
     "stopSong": "<@{author}> ⏹ arrête la musique!",
     "leaveChannel": "Quitte le salon vocal...",
-    "songNotFound": "Audio Not Found"
+    "songNotFound": "Audio Not Found",
+    "songAccessErr": "La vidéo est soumise à une limite d'âge, privée ou indisponible"
   },
   "playlist": {
     "description": "Écoute une playlist venant de YouTube",
@@ -110,7 +111,7 @@
     "usageReply": "Utilisation: {prefix}{name} <Nom de la vidéo>",
     "errorAlreadyCollector": "Un collecteur de messages est déjà actif dans ce salon.",
     "errorNotChannel": "Vous devez d'abord rejoindre un salon vocal!",
-    "resultEmbedTtile": "**Répondez avec le numéro de la chanson que vous souhaitez écouter**",
+    "resultEmbedTitle": "**Répondez avec le numéro de la chanson que vous souhaitez écouter**",
     "resultEmbedDesc": "Résultat pour: {search}"
   },
   "shuffle": {

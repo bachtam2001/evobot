@@ -1,8 +1,8 @@
 {
   "clip": {
     "description": "Reproduz um clipe de música.",
-    "usagesReply": "Uso: /clip <nome>",
-    "errorQueue": "Não é possível reproduzir este clipe porque há uma playlist ativa.", 
+    "usagesReply": "Uso: {prefix}clip <nome>",
+    "errorQueue": "Não é possível reproduzir este clipe porque há uma playlist ativa.",
     "errorNotChannel": "Você precisa entrar em um canal de voz primeiro!"
   },
   "clips": {
@@ -71,7 +71,8 @@
     "loopSong": "<@{author}> Repetir está {loop}",
     "stopSong": "<@{author}> ⏹ parou a música!",
     "leaveChannel": "Deixando o canal de voz!",
-    "songNotFound": "Audio Not Found"
+    "songNotFound": "Audio Not Found",
+    "songAccessErr": "Video is age restricted, private or unavailable"
   },
   "playlist": {
     "description": "Reproduz uma playlist do youtube",
@@ -116,7 +117,7 @@
     "usageReply": "Uso: {prefix}{name} <Nome do Vídeo>",
     "errorAlreadyCollector": "Uma busca ainda está ativa.",
     "errorNotChannel": "Você precisa entrar em um canal de voz primeiro!",
-    "resultEmbedTtile": "**Você precisa enviar um número para tocar.**",
+    "resultEmbedTitle": "**Você precisa enviar um número para tocar.**",
     "resultEmbedDesc": "Resultador para: {search}"
   },
   "shuffle": {

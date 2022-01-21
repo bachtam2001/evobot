@@ -1,7 +1,7 @@
 {
   "clip": {
     "description": "播放本地音乐",
-    "usagesReply": "用法: /clip <名称>",
+    "usagesReply": "用法: {prefix}clip <名称>",
     "errorQueue": "无法播放本地音乐，因为目前已经有有效的音乐队列",
     "errorNotChannel": "你必须先加入语音频道!"
   },
@@ -71,7 +71,8 @@
     "loopSong": "<@{author}> 重複播放目前是 {loop}",
     "stopSong": "<@{author}> ⏹ 停止了歌曲!",
     "leaveChannel": "正在离开语音频道...",
-    "songNotFound": "没有找到曲目"
+    "songNotFound": "没有找到曲目",
+    "songAccessErr": "视频有年龄限制、私人或不可用"
   },
   "playlist": {
     "description": "播放 YouTube 的播放清单",
@@ -116,7 +117,7 @@
     "usageReply": "用法: {prefix}{name} <影片名称>",
     "errorAlreadyCollector": "讯息接收器已经在这个频道上启用",
     "errorNotChannel": "你必须先加入语音频道!",
-    "resultEmbedTtile": "**回复你想要播放的歌曲代码**",
+    "resultEmbedTitle": "**回复你想要播放的歌曲代码**",
     "resultEmbedDesc": "搜寻{search}的结果"
   },
   "shuffle": {

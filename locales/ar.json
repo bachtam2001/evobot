@@ -1,7 +1,7 @@
 {
   "clip": {
     "description": "تشغيل مقطع صوتي",
-    "usagesReply": "إستعمال: /clip <اسم>",
+    "usagesReply": "إستعمال: {prefix}clip <اسم>",
     "errorQueue": "لا يمكن تشغيل المقطع نظرًا لوجود قائمة اغاني تعمل...",
     "errorNotChannel": "تحتاج إلى الانضمام إلى قناة صوتية أولاً!"
   },
@@ -71,7 +71,8 @@
     "loopSong": "<@{author}> التكرار الان {loop}",
     "stopSong": "<@{author}> أوقف الموسيقى ⏹",
     "leaveChannel": "جارٍ ترك القناة الصوتية...",
-    "songNotFound": "Audio Not Found"
+    "songNotFound": "Audio Not Found",
+    "songAccessErr": "Video is age restricted, private or unavailable"
   },
   "playlist": {
     "description": "تشغيل قائمة تشغيل من يوتيوب",
@@ -116,7 +117,7 @@
     "usageReply": "استعمال: {prefix}{name} <اسم مقطع>",
     "errorAlreadyCollector": "مُجمع الرسائل نشط بالفعل في هذه القناة.",
     "errorNotChannel": "تحتاج إلى الانضمام إلى قناة صوتية أولاً!",
-    "resultEmbedTtile": "**رد برقم الأغنية التي تريد تشغيلها**",
+    "resultEmbedTitle": "**رد برقم الأغنية التي تريد تشغيلها**",
     "resultEmbedDesc": "{search} نتائج لـ"
   },
   "shuffle": {

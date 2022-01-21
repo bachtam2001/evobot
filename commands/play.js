@@ -34,7 +34,7 @@ module.exports = {
     if (!permissions.has("SPEAK")) return message.reply(i18n.__("play.missingPermissionSpeak"));
 
     const search = args.join(" ");
-    const videoPattern = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
+    const videoPattern = /^(https?:\/\/)?(www\.)?(m\.|music\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
     const playlistPattern = /^.*(list=)([^#\&\?]*).*/gi;
     const scRegex = /^https?:\/\/(soundcloud\.com)\/(.*)$/;
     const mobileScRegex = /^https?:\/\/(soundcloud\.app\.goo\.gl)\/(.*)$/;
@@ -119,7 +119,12 @@ module.exports = {
         };
       } catch (error) {
         console.error(error);
-        return message.reply(error.message).catch(console.error);
+        
+        if (error.message.includes("410")) {
+          return message.reply(i18n.__("play.songAccessErr")).catch(console.error);
+        } else {
+          return message.reply(error.message).catch(console.error);
+        }
       }
     }
 
